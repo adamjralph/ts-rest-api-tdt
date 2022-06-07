@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 const log = pino({
   base: {
     pid: false,
-    timestamp: () => `,"time:" ${dayjs().format("YYYY-MM-DD HH:mm:ms:ssZ[Z]")}`,
+    timestamp: () => `,"time:" ${dayjs.utc().format()}`,
   },
   transport: {
     target: "pino-pretty",
